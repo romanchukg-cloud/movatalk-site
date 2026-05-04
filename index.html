@@ -12,7 +12,8 @@
   <meta property="og:url" content="https://movatalk.com/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://movatalk.com/">
+  <link rel="canonical" href="https://movatalk.com/">
+  <link rel="icon" href="/app-icon.png">
 
 
 <!-- Google tag (gtag.js) -->
@@ -302,7 +303,10 @@
   </div>
 
   <div class="cta-wrapper">
-  <a class="app-store-button" href="#">
+  <a class="app-store-button"
+     href="#"
+     aria-label="Coming soon on the App Store"
+     onclick="gtag('event', 'app_store_click', { event_category: 'engagement', event_label: 'hero_cta' });">
     <span>
       <span class="small">Coming soon on</span>
       <span class="main">App Store</span>
@@ -386,5 +390,17 @@
     </div>
 
   </main>
+  <script>
+    let scrollTracked = false;
+    
+    window.addEventListener('scroll', () => {
+      if (!scrollTracked && window.scrollY > 300) {
+        scrollTracked = true;
+        gtag('event', 'scroll_300', {
+          event_category: 'engagement'
+        });
+      }
+    });
+</script>
 </body>
 </html>
