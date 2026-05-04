@@ -1,56 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MovaTalk — Offline AI Voice & Camera Translator</title>
-  <meta name="description" content="MovaTalk is a private offline AI translator for voice, conversations, camera and photos. Translation runs on-device." />
-  <link rel="icon" href="app-icon.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovaTalk</title>
+
   <style>
-    :root{
-      --bg:#f6f8fb; --text:#101828; --muted:#667085; --card:rgba(255,255,255,.72);
-      --line:rgba(16,24,40,.08); --blue:#4da8f7; --green:#7ddc8b;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      text-align: center;
     }
-    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:radial-gradient(circle at 15% 10%,rgba(77,168,247,.28),transparent 32%),radial-gradient(circle at 90% 5%,rgba(125,220,139,.32),transparent 30%),linear-gradient(180deg,#fff,var(--bg));color:var(--text)}
-    .wrap{max-width:1120px;margin:0 auto;padding:28px 22px 56px}.nav{display:flex;justify-content:space-between;align-items:center}.brand{display:flex;gap:12px;align-items:center;font-weight:700}.brand img{width:42px;height:42px;border-radius:12px}.links a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;padding:86px 0 64px}.badge{display:inline-flex;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);backdrop-filter:blur(18px);color:#344054;font-size:14px}.h1{font-size:66px;line-height:.96;letter-spacing:-3px;margin:22px 0 18px}.lead{font-size:21px;line-height:1.5;color:var(--muted);max-width:650px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:18px;padding:15px 20px;font-weight:700;text-decoration:none}.primary{background:#111827;color:white}.secondary{background:var(--card);border:1px solid var(--line);color:var(--text)}.phone{justify-self:center;width:min(360px,100%);padding:22px;border-radius:42px;background:rgba(255,255,255,.56);box-shadow:0 30px 80px rgba(16,24,40,.14);border:1px solid var(--line);backdrop-filter:blur(22px)}.screen{border-radius:32px;background:linear-gradient(135deg,#57b3f6,#91e48b);padding:28px;min-height:520px;color:white;display:flex;flex-direction:column;justify-content:space-between}.screen img{width:88px;height:88px;border-radius:24px;box-shadow:0 12px 30px rgba(0,0,0,.14)}.mic{width:92px;height:92px;border-radius:50%;background:white;color:#111827;margin:0 auto;display:grid;place-items:center;font-size:38px;box-shadow:0 20px 45px rgba(0,0,0,.18)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px;backdrop-filter:blur(18px);box-shadow:0 12px 38px rgba(16,24,40,.06)}.card h3{margin:0 0 10px;font-size:20px}.card p{margin:0;color:var(--muted);line-height:1.45}.privacy{margin-top:20px;border-radius:30px;padding:30px;background:#101828;color:white;display:flex;justify-content:space-between;gap:20px;align-items:center}.privacy p{color:#cfd7e6;margin:6px 0 0}.footer{display:flex;justify-content:space-between;gap:16px;margin-top:34px;color:var(--muted);font-size:14px}.footer a{color:var(--muted);margin-left:16px;text-decoration:none}@media(max-width:850px){.hero{grid-template-columns:1fr;padding:54px 0}.h1{font-size:46px;letter-spacing:-2px}.cards{grid-template-columns:1fr}.privacy,.footer{display:block}.links{display:none}.phone{width:100%}}
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .logo {
+      width: 140px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 10px 0;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #6e6e73;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      text-align: left;
+      margin: 40px 0;
+    }
+
+    .features h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    a {
+      color: #007aff;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #86868b;
+    }
   </style>
 </head>
+
 <body>
-  <main class="wrap">
-    <nav class="nav">
-      <div class="brand"><img src="app-icon.png" alt="MovaTalk icon"><span>MovaTalk</span></div>
-      <div class="links"><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div>
-    </nav>
 
-    <section class="hero">
-      <div>
-        <div class="badge">Offline AI Voice & Camera Translator</div>
-        <h1 class="h1">Translate privately. Speak naturally.</h1>
-        <p class="lead">MovaTalk translates speech, conversations, camera text and photos directly on your device — designed for privacy, travel and everyday communication.</p>
-        <div class="cta"><a class="btn primary" href="#">Coming soon on the App Store</a><a class="btn secondary" href="privacy.html">Read Privacy Policy</a></div>
-      </div>
-      <div class="phone">
-        <div class="screen">
-          <img src="app-icon.png" alt="MovaTalk app icon">
-          <div class="mic">🎙️</div>
-          <div><h2 style="font-size:34px;margin:0 0 8px;letter-spacing:-1px">Voice translation</h2><p style="margin:0;font-size:18px;opacity:.92">Tap, speak, translate.</p></div>
-        </div>
-      </div>
-    </section>
+<div class="container">
 
-    <section class="cards">
-      <div class="card"><h3>Voice</h3><p>Translate spoken phrases with a simple push-to-talk flow.</p></div>
-      <div class="card"><h3>Conversation</h3><p>Split-screen mode for two people speaking different languages.</p></div>
-      <div class="card"><h3>Camera</h3><p>Translate text from camera or photos, useful for signs and documents.</p></div>
-      <div class="card"><h3>Private</h3><p>Your voice, images and translations stay on your device.</p></div>
-    </section>
+  <img src="app-icon.png" class="logo" />
 
-    <section class="privacy">
-      <div><strong>Built for offline use.</strong><p>No account. No cloud processing required. Your conversations remain yours.</p></div>
-      <a class="btn secondary" href="support.html">Contact Support</a>
-    </section>
+  <h1>MovaTalk</h1>
 
-    <footer class="footer"><div>© 2026 MovaTalk</div><div><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a></div></footer>
-  </main>
+  <div class="subtitle">
+    Offline AI Voice & Camera Translator
+  </div>
+
+  <p>
+    Translate speech, conversations, and text from images — fully offline and private.
+  </p>
+
+  <div class="features">
+    <h2>What’s next</h2>
+
+    <h3>Available now</h3>
+    <ul>
+      <li>Offline AI voice translation</li>
+      <li>Conversation mode for real-time communication</li>
+      <li>Text translation</li>
+      <li>Camera and photo translation</li>
+      <li>Local translation history</li>
+      <li>Fully on-device, privacy-first processing</li>
+    </ul>
+
+    <h3>Coming next</h3>
+    <ul>
+      <li>More offline language models</li>
+      <li>Improved translation quality</li>
+      <li>Better photo translation</li>
+      <li>Faster offline performance</li>
+      <li>App localization</li>
+    </ul>
+  </div>
+
+  <a href="/privacy.html">Privacy Policy</a>
+  <a href="/support.html">Support</a>
+
+  <div class="footer">
+    © 2026 MovaTalk
+  </div>
+
+</div>
+
 </body>
 </html>
